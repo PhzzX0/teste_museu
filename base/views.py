@@ -3,4 +3,5 @@ from django.shortcuts import render
 # Create your views here.
 
 def base(request):
-    return render(request, 'base.html')
+    '''essa  funcao esta trabalhando com a requisicao da pagina e a gente tem que tratar essa requisicao'''
+    return render(request, 'base/base.html')
