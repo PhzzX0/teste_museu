@@ -43,26 +43,33 @@
     </div>
   </section>
 
-  <!-- Header -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-      <!-- Logo -->
-      <div class="logo">
-        <a href="/">
-          <img src="{% static 'base/img/icone_museu.png' %}" alt="Logo do Museu" class="mb-1">
-        </a>
-      </div>
 
-      <!-- Navbar -->
-      <nav id="navbar" class="nav">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#visitar">Visitar</a></li>
-          <li><a href="#noticias">Notícias</a></li>
-          <li><a href="#artefatos">Artefatos Históricos</a></li>
-        </ul>
-      </nav>
-    </div>
+  <!-- navbar-->
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="base.html"><img src="{% static 'base/img/icone_museu.png' %}"
+            alt="Logo do Museu"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index2.html">Sobre o museu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index3.html">Agenda visita</a>
+            </li>
+          </ul>
+        </div>
+        <a class="btn btn-outline-primary" href="#">ENTRAR</a>
+      </div>
+    </nav>
   </header>
 
   <!-- Carrossel -->
