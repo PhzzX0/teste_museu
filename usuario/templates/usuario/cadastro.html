@@ -1,56 +1,87 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Museu Luiza Cantofa</title>
-    <link rel="stylesheet" href="styles1.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Museu Luiza Cantofa</title>
+  <link rel="stylesheet" href="{% static 'usuario/css/style1.css' %}">
+  <link rel="shortcut icon" href="{% static 'usuario/img/logo_real.png' %}" type="image/x-icon">
 </head>
+
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">
-            <img src="logo.png" alt="Logo do Museu">
-        </div>
-        <ul class="menu">
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Histórias</a></li>
-            <li><a href="#">Museu</a></li>
-            <li><a href="#">Visita</a></li>
+
+  <!-- Barra de Navegação com o Bootstrap -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <!-- Logo do Museu -->
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'base/img/logo_real.png' %}" alt="Logo do Museu" class="logo">
+      </a>
+
+      <!-- Botão de toggle (aparece em dispositivos menores) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links da Navbar -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#inicio">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#historia">Histórias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#artefatos">Museu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'usuario_login' %}">Visitar</a>
+          </li>
         </ul>
-        <button class="btn-entrar">Entrar</button>
-    </nav>
+      </div>
 
-    <!-- Container principal do formulário -->
-    <div class="form-container">
-        <!-- Logo acima do formulário -->
-        <div class="logo-form">
-            <img src="logo.png" alt="Logo do Museu">
-        </div>
-
-        <!-- Formulário de cadastro -->
-        <div class="form-box">
-            <h2>Crie sua conta no Museu Luiza Cantofa</h2>
-            <form action="#" method="POST">
-                <label for="nome">Nome e Sobrenome</label>
-                <input type="text" id="nome" placeholder="Digite seu nome completo">
-
-                <label for="email">E-mail</label>
-                <input type="email" id="email" placeholder="Digite seu e-mail">
-
-                <label for="senha">Senha</label>
-                <input type="password" id="senha" placeholder="Crie uma senha">
-
-                <label for="confirmar-senha">Confirmar Senha</label>
-                <input type="password" id="confirmar-senha" placeholder="Confirme sua senha">
-
-                <button type="submit" class="btn-cadastrar">Cadastrar</button>
-            </form>
-        </div>
+      <!-- Botão "Entrar" -->
+      <button class="botao-estiloso">
+        <a href="{% url 'usuario_login' %}" class="text-white text-decoration-none">Entrar</a>
+      </button>
     </div>
-    
- <!-- Footer -->
- <div style="background-color: black; color: white; padding: 20px 10px;">
+  </nav>
+
+  <!-- Container principal do formulário -->
+  <div class="form-container">
+    <!-- Logo acima do formulário -->
+    <div class="logo-form">
+      <img src="{% static 'usuario/img/logo_real.png' %}" alt="Logo do Museu">
+    </div>
+
+    <!-- Formulário de cadastro -->
+    <div class="form-box">
+      <h2>Crie sua conta no Museu Luiza Cantofa</h2>
+      <form action="#" method="POST">
+        <label for="nome">Nome e Sobrenome</label>
+        <input type="text" id="nome" placeholder="Digite seu nome completo">
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="Digite seu e-mail">
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="Crie uma senha">
+
+        <label for="confirmar-senha">Confirmar Senha</label>
+        <input type="password" id="confirmar-senha" placeholder="Confirme sua senha">
+
+        <button type="submit" class="btn-cadastrar">Cadastrar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="background-color: black; color: white; padding: 20px 10px;">
     <div class="container">
       <div class="row">
         <!-- Informações sobre o Lajedo de Soledade -->
@@ -112,9 +143,10 @@
     <p>&copy; Site desenvolvido por estudantes do IFRN-Campus Apodi, em parceria com o Museu do Índio Luiza Cantofa</p>
   </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 </body>
+
 </html>

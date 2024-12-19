@@ -1,7 +1,7 @@
-/* Reset básico */
+/* Reset padrão */
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 
@@ -9,6 +9,7 @@ nav {
   background-color: #E1E1E1;
   height: 90px;
 }
+
 
 .logo {
   width: 100px;
@@ -19,17 +20,77 @@ nav {
   /* Espaçamento entre a logo e os links */
 }
 
-.btn-entrar {
-  background-color: #eee;
-  border: none;
-  padding: 5px 15px;
-  border-radius: 5px;
+
+.botao-estiloso {
+  padding: 10px 30px;
+  margin-right: 50px;
+  background: linear-gradient(135deg, #d26e6e, #CF3737);
+  color: white;
+  font-size: 18px;
   font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: 50px;
+  /* Deixa as bordas arredondadas */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
-.btn-entrar:hover {
-  background-color: #ddd;
+.botao-estiloso:hover {
+  transform: scale(1.1);
+  /* Aumenta o botão ao passar o mouse */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #d26e6e, #CF3737);
+  /* Troca as cores no hover */
+}
+
+.botao-estiloso:active {
+  transform: scale(1.05);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  /* Centraliza os itens horizontalmente */
+  align-items: center;
+  /* Centraliza os itens verticalmente */
+  flex-grow: 1;
+  /* Permite que os itens ocupem o espaço central */
+}
+
+
+.nav-link {
+  margin: 0 50px;
+  /* Espaçamento uniforme entre os links */
+  font-weight: 800;
+  /* Destaque no texto */
+  text-transform: uppercase;
+  /* Texto em maiúsculas */
+  color: #CF3737;
+  /* Cor dos textos */
+  text-decoration: none;
+  /* Remove o sublinhado dos links */
+  transition: color 0.3s ease;
+  /* Efeito suave ao passar o mouse */
+}
+
+.nav-link:hover {
+  color: white;
+  /* Cor diferente ao passar o mouse */
+}
+
+
+.color_texto {
+  color: #CF3737;
+}
+
+
+footer {
+  background-color: rgb(39, 37, 37);
+  color: #CF3737;
 }
 
 /* Container do formulário */
