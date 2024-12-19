@@ -1,0 +1,150 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro - Museu Luiza Cantofa</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="shortcut icon" href="{% static 'usuario/img/logo_real.png' %}" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="{% static 'usuario/css/style.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    </head>
+<body>
+  <!-- Barra de Navegação com o Bootstrap -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <!-- Logo do Museu -->
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'usuario/img/logo_real.png' %}" alt="Logo do Museu" class="logo">
+      </a>
+
+      <!-- Botão de toggle (aparece em dispositivos menores) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links da Navbar -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#inicio">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#historia">Histórias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#artefatos">Museu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'usuario_login' %}">Visitar</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Botão "Entrar" -->
+      <button class="botao-estiloso">
+        <a href="{% url 'usuario_login' %}" class="text-white text-decoration-none">Entrar</a>
+      </button>
+    </div>
+  </nav>
+
+    <main>
+        <div class="login-container">
+            <div class="login-form">
+                <h2>Bem-vindo(a) ao Museu Índio Luiza Cantofa</h2>
+                <form>
+                    <label for="usuario">USUÁRIO*</label>
+                    <input type="text" id="usuario" placeholder="Digite seu usuário" required>
+                    
+                    <label for="senha">SENHA*</label>
+                    <input type="password" id="senha" placeholder="Digite sua senha" required>
+
+                    <a href="#" class="esqueceu-senha">Esqueceu a senha?</a>
+                    <button type="submit" class="btn-submit">ENTRAR</button>
+                    <p class="cadastro">Não tem conta? <a href="{% url 'usuario_cadastro' %}">[Cadastre-se]</a></p>
+                </form>
+            </div>
+            <div class="logo-container">
+                <img src="{% static 'usuario/img/logo_real.png' %}" alt="Logo Museu do Índio">
+            </div>
+        </div>
+    </main>
+
+  <!-- Footer -->
+  <div style="background-color: black; color: white; padding: 20px 10px;">
+    <div class="container">
+      <div class="row">
+        <!-- Informações sobre o Lajedo de Soledade -->
+        <div class="col-lg-6 col-md-12 mb-4">
+          <h4 style="color: #C6142B;">MUSEU DO ÍNDIO LUIZA CANTOFA</h4>
+          <p>
+            O Museu do Índio Luiza Cantofa é um espaço cultural dedicado à preservação e valorização da história e das
+            tradições dos povos indígenas, especialmente dos Tabajaras Paiacus. Localizado em Apodi, Rio Grande do
+            Norte, o museu oferece uma rica coleção de artefatos, documentos e relatos que promovem o reconhecimento e o
+            respeito pela cultura indígena na região e no Brasil.
+          </p>
+          <p>
+            <a href="https://wa.me/5584999142282" target="_blank" rel="noopener noreferrer"
+              style="color: white; text-decoration: none;">
+              <strong>Telefone:</strong> +55 (84) 999142282<br>
+            </a>
+            <a href="mailto:contato@museuluizacantofa.org.br" target="_blank" rel="noopener noreferrer"
+              style="color: white; text-decoration: none;">
+              <strong>Email:</strong> contato@museuluizacantofa.org.br<br>
+            </a>
+            <a href="https://www.instagram.com/museudoindioluizacantofaofc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">
+              <strong>Instagram:</strong> @museudoindioluizacantofaofc
+            </a>
+          </p>
+        </div>
+
+        <!-- Links úteis -->
+        <div class="col-lg-6 col-md-12">
+          <h4 style="color: #C6142B;">LINKS ÚTEIS</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px;">
+              <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
+              <a href="?/Controlador/index/portugues" style="color: white; text-decoration: none;">INÍCIO</a>
+            </li>
+            <li style="margin-bottom: 10px;">
+              <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
+              <a href="?/Controlador/visitar/portugues" style="color: white; text-decoration: none;">HISTÓRIAS</a>
+            </li>
+            <li style="margin-bottom: 10px;">
+              <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
+              <a href="?/Controlador/sitio/portugues" style="color: white; text-decoration: none;">MUSEU</a>
+            </li>
+            <li style="margin-bottom: 10px;">
+              <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
+              <a href="?/Controlador/museu/portugues" style="color: white; text-decoration: none;">VISITAR</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra inferior -->
+  <div style="background-color: #C6142B; padding: 5px;"></div>
+
+  <!-- Rodapé -->
+  <footer style="text-align: center; background-color: black; color: white; font-size: 15px; padding: 10px;">
+    <p>&copy; Site desenvolvido por estudantes do IFRN-Campus Apodi, em parceria com o Museu do Índio Luiza Cantofa</p>
+  </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+def usuario_login(request):
+    return render(request, 'usuario/login.html')
 
-def base(request):
-    '''essa  funcao esta trabalhando com a requisicao da pagina e a gente tem que tratar essa requisicao'''
-    return render(request, 'usuario/usuario.html')
+def usuario_cadastro(request):
+    return render(request, 'usuario/cadastro.html')  # View para a página de cadastro

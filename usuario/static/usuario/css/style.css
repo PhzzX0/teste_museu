@@ -1,0 +1,155 @@
+/* Reset padrão */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+nav {
+    background-color: #E1E1E1;
+    height: 90px;
+}
+
+.logo {
+    width: 100px;
+    /* Tamanho proporcional da logo */
+    height: auto;
+    /* Preserva as proporções da imagem */
+    margin-left: 100px;
+    /* Espaçamento entre a logo e os links */
+}
+
+
+.botao-estiloso {
+    padding: 10px 30px;
+    margin-right: 50px;
+    background: linear-gradient(135deg, #d26e6e, #CF3737);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    /* Deixa as bordas arredondadas */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.botao-estiloso:hover {
+    transform: scale(1.1);
+    /* Aumenta o botão ao passar o mouse */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #d26e6e, #CF3737);
+    /* Troca as cores no hover */
+}
+
+.botao-estiloso:active {
+    transform: scale(1.05);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.btn-entrar {
+    background-color: #c00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-entrar:hover {
+    background-color: #a00;
+}
+
+/* Login Container */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.login-container {
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.login-form {
+    background-color: #c00;
+    padding: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+label {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input {
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.esqueceu-senha {
+    margin-top: 10px;
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-submit {
+    background-color: white;
+    color: #c00;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn-submit:hover {
+    background-color: #f1f1f1;
+}
+
+.cadastro {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.cadastro a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Logo Container */
+.logo-container {
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.logo-container img {
+    width: 150px;
+}

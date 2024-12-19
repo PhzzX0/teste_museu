@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.base),
+    path('', views.base, name='home'),  # URL raiz do app base
 ]

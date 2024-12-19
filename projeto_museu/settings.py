@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base', # linha adicionando o app criado
+    'usuario',
 ]
 
 MIDDLEWARE = [

@@ -16,52 +16,100 @@
 }
 
 nav {
-    background-color: white;
+    background-color: #E1E1E1;
     height: 90px;
 }
 
 
-/* Estilizar os links da navbar */
-.navbar-nav .nav-link {
-    color: #C6142B !important;
+.logo {
+    width: 100px;
+    /* Tamanho proporcional da logo */
+    height: auto;
+    /* Preserva as proporções da imagem */
+    margin-left: 100px;
+    /* Espaçamento entre a logo e os links */
+}
+
+
+.botao-estiloso {
+    padding: 10px 30px;
+    margin-right: 50px;
+    background: linear-gradient(135deg, #d26e6e, #CF3737);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
     text-decoration: none;
-    font-size: 15px;
-    font-family: 'Inter', sans-serif;
+    border: none;
+    border-radius: 50px;
+    /* Deixa as bordas arredondadas */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.botao-estiloso:hover {
+    transform: scale(1.1);
+    /* Aumenta o botão ao passar o mouse */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #d26e6e, #CF3737);
+    /* Troca as cores no hover */
+}
+
+.botao-estiloso:active {
+    transform: scale(1.05);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    /* Centraliza os itens horizontalmente */
+    align-items: center;
+    /* Centraliza os itens verticalmente */
+    flex-grow: 1;
+    /* Permite que os itens ocupem o espaço central */
+}
+
+
+.nav-link {
+    margin: 0 50px;
+    /* Espaçamento uniforme entre os links */
+    font-weight: 800;
+    /* Destaque no texto */
+    text-transform: uppercase;
+    /* Texto em maiúsculas */
+    color: #CF3737;
+    /* Cor dos textos */
+    text-decoration: none;
+    /* Remove o sublinhado dos links */
     transition: color 0.3s ease;
+    /* Efeito suave ao passar o mouse */
 }
 
-/* Estilo ao passar o mouse */
-.navbar-nav .nav-link:hover {
-    color: #8B0000 !important;
-    font-weight: 600;
-    /* Cor ao passar o mouse */
-}
-
-/* Para links ativos */
-.navbar-nav .nav-link.active {
-    color: #8B0000 !important;
-    font-weight: 700;
-    /* Destaque do link ativo */
+.nav-link:hover {
+    color: white;
+    /* Cor diferente ao passar o mouse */
 }
 
 
 .color_texto {
-    color: #C6142B;
+    color: #CF3737;
 }
 
-ul li {
-    margin: 0px 20px 0px 10px;
-}
-
-nav a img {
-    padding: 10px 0px 0px 0px;
-    margin: 10px 0px 4px 80px;
-    width: 120px;
-    height: 100px;
-    object-fit: cover;
-}
 
 footer {
     background-color: rgb(39, 37, 37);
-    color: #C6142B;
+    color: #CF3737;
+}
+
+/* Colapse do menu em telas menores */
+.navbar-collapse {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
 }
