@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro - Museu Luiza Cantofa</title>
+  <title>Login Usuário - Museu Luiza Cantofa</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="shortcut icon" href="{% static 'usuario/img/logo_real.png' %}" type="image/x-icon">
@@ -26,7 +26,7 @@
     <div class="container-fluid">
       <!-- Logo do Museu -->
       <a class="navbar-brand" href="#">
-        <img src="{% static 'base/img/logo_real.png' %}" alt="Logo do Museu" class="logo">
+        <img src="{% static 'base/img/logo_real.png' %}" alt="Logo do Museu" class="logo mb-1">
       </a>
 
       <!-- Botão de toggle (aparece em dispositivos menores) -->
@@ -39,31 +39,43 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#inicio">Início</a>
+            <a class="nav-link" href="{% url 'home_page' %}">Início</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#historia">Histórias</a>
+            <a class="nav-link" href="{% url 'museu' %}">MUSEU</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#artefatos">Museu</a>
+            <a class="nav-link" href="{% url 'acervo' %}">ACERVO</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'usuario_login' %}">Visitar</a>
+            <a class="nav-link" href="{% url 'visitar' %}">VISITAR</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'CHCTPLA' %}">CHCTPLA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'usuario_login' %}" style="text-decoration: underline;">ENTRAR</a>
           </li>
         </ul>
       </div>
 
-      <!-- Botão "Entrar" -->
-      <button class="botao-estiloso">
-        <a href="{% url 'usuario_login' %}" class="text-white text-decoration-none">Entrar</a>
-      </button>
+      <!-- Ícones de redes sociais -->
+      <div class="ms-3 d-flex align-items-center">
+        <a href="https://www.instagram.com/museudoindioluizacantofaofc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          target="_blank" class="text-dark me-3" style="font-size: 1.5rem;">
+          <i class="bi bi-instagram nav-link"></i></a>
+        <a href="https://www.facebook.com/luizacantofa/?locale=pt_BR" target="_blank" class="text-dark nav-link"
+          style="font-size: 1.5rem;">
+          <i class="bi bi-facebook nav-link"></i>
+        </a>
+      </div>
     </div>
   </nav>
 
-  <main>
+  <main class="main-login">
     <div class="login-container">
       <div class="login-form">
-        <h2 style="text-align: center;">Bem-vindo(a) ao Museu Índio Luiza Cantofa</h2>
+        <h2>Bem-vindo(a) ao Museu Índio Luiza Cantofa</h2>
         <form>
           <label for="usuario">USUÁRIO*</label>
           <input type="text" id="usuario" placeholder="Digite seu usuário" required>
@@ -83,12 +95,12 @@
   </main>
 
   <!-- Footer -->
-  <div style="background-color: black; color: white; padding: 20px 10px;">
+  <div style="background-color: #ffffff; color: black; padding: 20px 10px;">
     <div class="container">
       <div class="row">
         <!-- Informações sobre o Lajedo de Soledade -->
         <div class="col-lg-6 col-md-12 mb-4">
-          <h4 style="color: #C6142B;">MUSEU DO ÍNDIO LUIZA CANTOFA</h4>
+          <h4 style="color: #C6142B; font-weight: bolder;">MUSEU DO ÍNDIO LUIZA CANTOFA</h4>
           <p>
             O Museu do Índio Luiza Cantofa é um espaço cultural dedicado à preservação e valorização da história e das
             tradições dos povos indígenas, especialmente dos Tabajaras Paiacus. Localizado em Apodi, Rio Grande do
@@ -97,15 +109,15 @@
           </p>
           <p>
             <a href="https://wa.me/5584999142282" target="_blank" rel="noopener noreferrer"
-              style="color: white; text-decoration: none;">
+              style="color: black; text-decoration: none;">
               <strong>Telefone:</strong> +55 (84) 999142282<br>
             </a>
             <a href="mailto:contato@museuluizacantofa.org.br" target="_blank" rel="noopener noreferrer"
-              style="color: white; text-decoration: none;">
+              style="color: black; text-decoration: none;">
               <strong>Email:</strong> contato@museuluizacantofa.org.br<br>
             </a>
             <a href="https://www.instagram.com/museudoindioluizacantofaofc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-              target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">
+              target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none;">
               <strong>Instagram:</strong> @museudoindioluizacantofaofc
             </a>
           </p>
@@ -113,23 +125,23 @@
 
         <!-- Links úteis -->
         <div class="col-lg-6 col-md-12">
-          <h4 style="color: #C6142B;">LINKS ÚTEIS</h4>
+          <h4 style="color:#C6142B; font-weight: bolder;">LINKS ÚTEIS</h4>
           <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: 10px;">
               <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
-              <a href="#" style="color: white; text-decoration: none;">INÍCIO</a>
+              <a href="{% url 'museu' %}" style="color: black; text-decoration: none;">INÍCIO</a>
             </li>
             <li style="margin-bottom: 10px;">
               <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
-              <a href="#" style="color: white; text-decoration: none;">HISTÓRIAS</a>
+              <a href="{% url 'acervo' %}" style="color: black; text-decoration: none;">ACERVO</a>
             </li>
             <li style="margin-bottom: 10px;">
               <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
-              <a href="#" style="color: white; text-decoration: none;">MUSEU</a>
+              <a href="{% url 'visitar' %}" style="color: black; text-decoration: none;">VISITAR</a>
             </li>
             <li style="margin-bottom: 10px;">
               <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
-              <a href="#" style="color: white; text-decoration: none;">VISITAR</a>
+              <a href="{% url 'CHCTPLA' %}" style="color: black; text-decoration: none;">CHCTPLA</a>
             </li>
           </ul>
         </div>
@@ -137,14 +149,10 @@
     </div>
   </div>
 
-  <!-- Barra inferior -->
-  <div style="background-color: #C6142B; padding: 5px;"></div>
-
   <!-- Rodapé -->
-  <footer style="text-align: center; background-color: black; color: white; font-size: 15px; padding: 10px;">
-    <p>&copy; Site desenvolvido por estudantes do IFRN-Campus Apodi, em parceria com o Museu do Índio Luiza Cantofa</p>
+  <footer class="footer">
+    <p>&copy; Site desenvolvido por estudantes de infornática do IFRN-Campus Apodi</p>
   </footer>
-
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

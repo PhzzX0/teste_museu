@@ -1,0 +1,220 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museu do Índio Luiza Cantofa</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="shortcut icon" href="{% static 'base/img/logo_real.png' %}" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="{% static 'base/css/style.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Barra de Navegação com o Bootstrap -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <!-- Logo do Museu -->
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'base/img/logo_real.png' %}" alt="Logo do Museu" class="logo mb-1">
+      </a>
+
+      <!-- Botão de toggle (aparece em dispositivos menores) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links da Navbar -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home_page' %}">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'museu' %}">MUSEU</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'acervo' %}">ACERVO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'visitar' %}">VISITAR</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'CHCTPLA' %}">CHCTPLA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'usuario_login' %}" style="text-decoration: underline;">ENTRAR</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Ícones de redes sociais -->
+      <div class="ms-3 d-flex align-items-center">
+        <a href="https://www.instagram.com/museudoindioluizacantofaofc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          target="_blank" class="text-dark me-3" style="font-size: 1.5rem;">
+          <i class="bi bi-instagram nav-link"></i></a>
+        <a href="https://www.facebook.com/luizacantofa/?locale=pt_BR" target="_blank" class="text-dark nav-link" style="font-size: 1.5rem;">
+          <i class="bi bi-facebook nav-link"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-5">
+    <!-- Carrossel -->
+    <div id="carouselExample" class="carousel slide margem" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'base/img/foto_carrossel1.jpg' %}" class="d-block w-100" alt="Imagem 1">
+          <div class="carousel-caption d-none d-md-block">
+            <h1>Museu do índio Luiza Cantofa - Apodi/RN</h1>
+            <h3>Preservando a cultura indígena de Apodi</h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'base/img/foto_carrossel3.jpg' %}" class="d-block w-100" alt="Imagem 2"
+            style="height: 100%; object-fit: cover;">
+          <div class="carousel-caption d-none d-md-block">
+            <h1>Conheça os artefatos históricos</h1>
+            <h3>Relíquias preservadas da história indígena</h3>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </div>
+  </section>
+
+
+  <!-- START THE FEATURETTES -->
+  <main>
+
+    <div class="row featurette">
+      <div class="col-md-6">
+        <h2 class="featurette-heading fw-normal lh-1">Museu do Índio LuiZa Cantofa</h2>
+        <p class="lead"> O Museu Indígena Luiza Cantofa é uma entidade cultural vinculada ao Centro Histórico Cultural
+          Tapuias Paiacus da Lagoa do Apodi (CHCTPLA), que se dedica ao resgate e à reconstrução da cultura do povo
+          Tapuia Paiacu de Apodi. Este povo habita o Território Pody há milhares de anos, posteriormente conhecido como
+          Ribeira do Apodi, indígenas isolados, caçadores coletores. Os primeiros não-indígenas a invadirem esse
+          território no ano de 1499 foram Alonso de Hojeda, Almirante de Espanha, João de la Cosa e Américo Vespúcio.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <img src="{% static 'base\img\DSC_1256.jpg' %}" class="featurette-image img-fluid mx-auto" width="500"
+          height="500" alt="Museu do Índio Luisa Cantofa">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">CHCTPLA</h2>
+        <p class="lead">O CHCTPLA é construído por famílias com histórico indígena, conforme o direito à autoafirmação
+          estabelecido na Constituição Federal e em convenções internacionais como a Convenção 169 da OIT. A história
+          indígena do município de Apodi é marcada por conflitos, incluindo o massacre de 1825, quando indígenas Paiacu
+          foram mortos após uma revolta em Portalegre. Fundado por Lúcia Paiacu Tabajara, o Museu Luiza Cantofa abriga
+          peças líticas preservadas por famílias integrantes do CHCTPLA, sendo reconhecido como o primeiro museu
+          indígena do Rio Grande do Norte. O museu homenageia Luiza Cantofa, uma das lideranças Paiacu da revolta de
+          1825.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="{% static 'base\img\995630_294621114077675_3022971566324598905_n (1).jpg' %}"
+          class="featurette-image img-fluid mx-auto" width="500" height="500" alt="CHCTPLA">
+      </div>
+    </div>
+
+
+    <hr class="featurette-divider">
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div style="background-color: #E1E1E1; color: black; padding: 20px 10px;">
+    <div class="container">
+      <div class="row">
+        <!-- Informações sobre o Lajedo de Soledade -->
+        <div class="col-lg-6 col-md-12 mb-4">
+          <h4 style="color: #C6142B; font-weight: bolder;">MUSEU DO ÍNDIO LUIZA CANTOFA</h4>
+          <p>
+            O Museu do Índio Luiza Cantofa é um espaço cultural dedicado à preservação e valorização da história e das
+            tradições dos povos indígenas, especialmente dos Tabajaras Paiacus. Localizado em Apodi, Rio Grande do
+            Norte, o museu oferece uma rica coleção de artefatos, documentos e relatos que promovem o reconhecimento e o
+            respeito pela cultura indígena na região e no Brasil.
+          </p>
+          <p>
+            <a href="https://wa.me/5584999142282" target="_blank" rel="noopener noreferrer"
+              style="color: black; text-decoration: none;">
+              <strong>Telefone:</strong> +55 (84) 999142282<br>
+            </a>
+            <a href="mailto:contato@museuluizacantofa.org.br" target="_blank" rel="noopener noreferrer"
+              style="color: black; text-decoration: none;">
+              <strong>Email:</strong> contato@museuluizacantofa.org.br<br>
+            </a>
+            <a href="https://www.instagram.com/museudoindioluizacantofaofc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none;">
+              <strong>Instagram:</strong> @museudoindioluizacantofaofc
+            </a>
+          </p>
+        </div>
+
+        <!-- Links úteis -->
+        <div class="col-lg-6 col-md-12">
+          <h4 style="color:#C6142B; font-weight: bolder;">LINKS ÚTEIS</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px;">
+              <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
+              <a href="{% url 'museu' %}" style="color: black; text-decoration: none;">INÍCIO</a>
+            </li>
+            <li style="margin-bottom: 10px;">
+              <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
+              <a href="{% url 'acervo' %}" style="color: black; text-decoration: none;">ACERVO</a>
+            </li>
+            <li style="margin-bottom: 10px;">
+              <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
+              <a href="{% url 'visitar' %}" style="color: black; text-decoration: none;">VISITAR</a>
+            </li>
+            <li style="margin-bottom: 10px;">
+              <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
+              <a href="{% url 'CHCTPLA' %}" style="color: black; text-decoration: none;">CHCTPLA</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <p>&copy; Site desenvolvido por estudantes de infornática do IFRN-Campus Apodi</p>
+  </footer>
+
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

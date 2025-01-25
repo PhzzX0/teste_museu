@@ -1,94 +1,49 @@
+/*Configuracoes gerais*/
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.carousel-item img {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-}
+/*--------------------------------------------------------------------------*/
 
-.card-img-top {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-}
-
-nav {
+body {
     background-color: #E1E1E1;
+}
+
+/*--------------------------------------------------------------------------*/
+
+/*estilização navbar*/
+nav {
+    background-color: #ffffff;
     height: 90px;
 }
 
-
 .logo {
-    width: 100px;
-    /* Tamanho proporcional da logo */
-    height: auto;
-    /* Preserva as proporções da imagem */
+    width: 120px;
+    height: 120px;
     margin-left: 100px;
-    /* Espaçamento entre a logo e os links */
-}
-
-
-.botao-estiloso {
-    padding: 10px 30px;
-    margin-right: 50px;
-    background: linear-gradient(135deg, #d26e6e, #CF3737);
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: none;
-    border-radius: 50px;
-    /* Deixa as bordas arredondadas */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.botao-estiloso:hover {
-    transform: scale(1.1);
-    /* Aumenta o botão ao passar o mouse */
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #d26e6e, #CF3737);
-    /* Troca as cores no hover */
-}
-
-.botao-estiloso:active {
-    transform: scale(1.05);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-nav {
     display: flex;
-    justify-content: center;
-    /* Centraliza os itens horizontalmente */
+    justify-content: right;
     align-items: center;
-    /* Centraliza os itens verticalmente */
     flex-grow: 1;
-    /* Permite que os itens ocupem o espaço central */
 }
 
 
 .nav-link {
-    margin: 0 50px;
-    /* Espaçamento uniforme entre os links */
-    font-weight: 800;
-    /* Destaque no texto */
+    margin: 0 15px;
+    font-weight: bold;
     text-transform: uppercase;
-    /* Texto em maiúsculas */
     color: #CF3737;
-    /* Cor dos textos */
     text-decoration: none;
-    /* Remove o sublinhado dos links */
     transition: color 0.3s ease;
-    /* Efeito suave ao passar o mouse */
 }
 
 .nav-link:hover {
-    color: white;
+    color: green;
     /* Cor diferente ao passar o mouse */
 }
 
@@ -97,19 +52,118 @@ nav {
     color: #CF3737;
 }
 
+/*--------------------------------------------------------------------------*/
 
-footer {
-    background-color: rgb(39, 37, 37);
+/* Seções do Main */
+main {
+    background-color: #E1E1E1;
+    padding: 50px 0;
+}
+
+/*--------------------------------------------------------------------------*/
+
+/* Divs de Featurette (divs dentro do main) */
+.featurette {
+    padding: 40px 0;
+    margin: 40px 40px;
+}
+
+/* Imagem dentro das divs */
+.featurette-image {
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    margin: 20px 20px;
+    width: 500px;
+    height: 500px;
+}
+
+/* Texto da Featurette */
+.featurette-heading {
+    font-family: 'sans-serif', Arial, Helvetica;
+    font-size: 2rem;
     color: #CF3737;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
 }
 
-/* Colapse do menu em telas menores */
-.navbar-collapse {
+.featurette .lead {
+    font-size: 1.5em;
+    color: black;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 30px;
+    font-weight: 350;
+}
+
+/* Divisória entre as featurettes */
+.featurette-divider {
+    border-top: 3px solid #ecf0f1;
+    margin: 50px 0;
+}
+
+/*--------------------------------------------------------------------------*/
+
+/* Estilozação carrossel */
+.carousel-item img {
+    object-fit: cover;
+}
+
+.carousel-caption h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-caption h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/*--------------------------------------------------------------------------*/
+
+.footer {
+    background-color: #b7b7b7;
     text-align: center;
+    color: black;
+    font-size: 15px;
+    padding: 10px;
 }
 
-@media (max-width: 768px) {
-    .navbar-nav {
-        flex-direction: column;
-    }
+/*--------------------------------------------------------------------------*/
+.card-img-top {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/*--------------------------------------------------------------------------*/
+
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 6px;
+}
+
+/* Trilha da barra de rolagem (área onde o polegar se move) */
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* Polegar (parte que você arrasta) */
+::-webkit-scrollbar-thumb {
+    background-color: #A8A8A8;
+    border-radius: 10px;
+}
+
+
+/* Estilização dos bannes das paginas */
+
+.banner-paginas {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    margin-bottom: 50px;
 }

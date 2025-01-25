@@ -6,22 +6,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro - Museu Luiza Cantofa</title>
-  <link rel="stylesheet" href="{% static 'usuario/css/style1.css' %}">
+  <title>Cadastro Usuário - Museu Luiza Cantofa</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="shortcut icon" href="{% static 'usuario/img/logo_real.png' %}" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="{% static 'usuario/css/style.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
 
   <!-- Barra de Navegação com o Bootstrap -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
       <!-- Logo do Museu -->
       <a class="navbar-brand" href="#">
-        <img src="{% static 'base/img/logo_real.png' %}" alt="Logo do Museu" class="logo">
+        <img src="{% static 'base/img/logo_real.png' %}" alt="Logo do Museu" class="logo mb-1">
       </a>
 
-      <!-- Botão de toggle (aparece em dispositivos menores) -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -31,62 +38,81 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#inicio">Início</a>
+            <a class="nav-link" href="{% url 'home_page' %}">Início</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#historia">Histórias</a>
+            <a class="nav-link" href="{% url 'museu' %}">MUSEU</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#artefatos">Museu</a>
+            <a class="nav-link" href="{% url 'acervo' %}">ACERVO</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'usuario_login' %}">Visitar</a>
+            <a class="nav-link" href="{% url 'visitar' %}">VISITAR</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'CHCTPLA' %}">CHCTPLA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'usuario_login' %}">ENTRAR</a>
           </li>
         </ul>
       </div>
 
-      <!-- Botão "Entrar" -->
-      <button class="botao-estiloso">
-        <a href="{% url 'usuario_login' %}" class="text-white text-decoration-none">Entrar</a>
-      </button>
+      <!-- Ícones de redes sociais -->
+      <!-- Ícones de redes sociais -->
+      <div class="ms-3 d-flex align-items-center">
+        <a href="https://www.instagram.com/museudoindioluizacantofaofc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          target="_blank" class="text-dark me-3" style="font-size: 1.5rem;">
+          <i class="bi bi-instagram nav-link"></i></a>
+        <a href="https://www.facebook.com/luizacantofa/?locale=pt_BR" target="_blank" class="text-dark nav-link"
+          style="font-size: 1.5rem;">
+          <i class="bi bi-facebook nav-link"></i>
+        </a>
+      </div>
     </div>
   </nav>
 
-  <!-- Container principal do formulário -->
-  <div class="form-container">
-    <!-- Logo acima do formulário -->
-    <div class="logo-form">
-      <img src="{% static 'usuario/img/logo_real.png' %}" alt="Logo do Museu">
+  <main class="main-container">
+    <div>
+      <div class="logo-container_cadastro">
+        <img src="{% static 'usuario/img/logo_real.png' %}" alt="Logo Museu do Índio">
+      </div>
+      <div class="cadastro-form">
+        <h2>Crie sua conta no Museu Luiza Cantofa</h2>
+        <form>
+          {% csrf_token %}
+
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+
+          <label for="Sobrenome">Sobrenome</label>
+          <input type="text" id="Sobrenome" name="Sobrenome" placeholder="Digite seu Sobrenome" required>
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required>
+
+
+          <label for="confirmar-senha">Confirmar Senha</label>
+          <input type="password" id="confirmar-senha" name="confirmar_senha" placeholder="Confirme sua senha" required>
+
+          <button type="submit" class="botao_cadastro">Cadastrar</button>
+        </form>
+      </div>
     </div>
-
-    <!-- Formulário de cadastro -->
-    <div class="form-box">
-      <h2>Crie sua conta no Museu Luiza Cantofa</h2>
-      <form action="#" method="POST">
-        <label for="nome">Nome e Sobrenome</label>
-        <input type="text" id="nome" placeholder="Digite seu nome completo">
-
-        <label for="email">E-mail</label>
-        <input type="email" id="email" placeholder="Digite seu e-mail">
-
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" placeholder="Crie uma senha">
-
-        <label for="confirmar-senha">Confirmar Senha</label>
-        <input type="password" id="confirmar-senha" placeholder="Confirme sua senha">
-
-        <button type="submit" class="btn-cadastrar">Cadastrar</button>
-      </form>
     </div>
-  </div>
+  </main>
 
   <!-- Footer -->
-  <div style="background-color: black; color: white; padding: 20px 10px;">
+  <div style="background-color: #E1E1E1; color: black; padding: 20px 10px;">
     <div class="container">
       <div class="row">
         <!-- Informações sobre o Lajedo de Soledade -->
         <div class="col-lg-6 col-md-12 mb-4">
-          <h4 style="color: #C6142B;">MUSEU DO ÍNDIO LUIZA CANTOFA</h4>
+          <h4 style="color: #C6142B; font-weight: bolder;">MUSEU DO ÍNDIO LUIZA CANTOFA</h4>
           <p>
             O Museu do Índio Luiza Cantofa é um espaço cultural dedicado à preservação e valorização da história e das
             tradições dos povos indígenas, especialmente dos Tabajaras Paiacus. Localizado em Apodi, Rio Grande do
@@ -95,39 +121,40 @@
           </p>
           <p>
             <a href="https://wa.me/5584999142282" target="_blank" rel="noopener noreferrer"
-              style="color: white; text-decoration: none;">
+              style="color: black; text-decoration: none;">
               <strong>Telefone:</strong> +55 (84) 999142282<br>
             </a>
             <a href="mailto:contato@museuluizacantofa.org.br" target="_blank" rel="noopener noreferrer"
-              style="color: white; text-decoration: none;">
+              style="color: black; text-decoration: none;">
               <strong>Email:</strong> contato@museuluizacantofa.org.br<br>
             </a>
             <a href="https://www.instagram.com/museudoindioluizacantofaofc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-              target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">
+              target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none;">
               <strong>Instagram:</strong> @museudoindioluizacantofaofc
             </a>
           </p>
         </div>
 
         <!-- Links úteis -->
+        <!-- Links úteis -->
         <div class="col-lg-6 col-md-12">
-          <h4 style="color: #C6142B;">LINKS ÚTEIS</h4>
+          <h4 style="color:#C6142B; font-weight: bolder;">LINKS ÚTEIS</h4>
           <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: 10px;">
               <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
-              <a href="?/Controlador/index/portugues" style="color: white; text-decoration: none;">INÍCIO</a>
+              <a href="{% url 'museu' %}" style="color: black; text-decoration: none;">INÍCIO</a>
             </li>
             <li style="margin-bottom: 10px;">
               <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
-              <a href="?/Controlador/visitar/portugues" style="color: white; text-decoration: none;">HISTÓRIAS</a>
+              <a href="{% url 'acervo' %}" style="color: black; text-decoration: none;">ACERVO</a>
             </li>
             <li style="margin-bottom: 10px;">
               <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
-              <a href="?/Controlador/sitio/portugues" style="color: white; text-decoration: none;">MUSEU</a>
+              <a href="{% url 'visitar' %}" style="color: black; text-decoration: none;">VISITAR</a>
             </li>
             <li style="margin-bottom: 10px;">
               <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
-              <a href="?/Controlador/museu/portugues" style="color: white; text-decoration: none;">VISITAR</a>
+              <a href="{% url 'CHCTPLA' %}" style="color: black; text-decoration: none;">CHCTPLA</a>
             </li>
           </ul>
         </div>
@@ -135,12 +162,9 @@
     </div>
   </div>
 
-  <!-- Barra inferior -->
-  <div style="background-color: #C6142B; padding: 5px;"></div>
-
   <!-- Rodapé -->
-  <footer style="text-align: center; background-color: black; color: white; font-size: 15px; padding: 10px;">
-    <p>&copy; Site desenvolvido por estudantes do IFRN-Campus Apodi, em parceria com o Museu do Índio Luiza Cantofa</p>
+  <footer class="footer">
+    <p>&copy; Site desenvolvido por estudantes de infornática do IFRN-Campus Apodi</p>
   </footer>
 
   <!-- Bootstrap JS -->

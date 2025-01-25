@@ -1,15 +1,24 @@
-/* Reset padrão */
+/* Configurações Gerais */
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
+/*-------------------------------------------------------------------------*/
 
-nav {
+/* cor do fundo do body*/
+body {
     background-color: #E1E1E1;
+}
+
+/*-------------------------------------------------------------------------*/
+
+/*classes do navbar */
+nav {
+    background-color: #ffffff;
     height: 90px;
 }
-
 
 .logo {
     width: 100px;
@@ -17,45 +26,16 @@ nav {
     margin-left: 100px;
 }
 
-
-.botao-estiloso {
-    padding: 10px 30px;
-    margin-right: 50px;
-    background: linear-gradient(135deg, #d26e6e, #CF3737);
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.botao-estiloso:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #d26e6e, #CF3737);
-}
-
-.botao-estiloso:active {
-    transform: scale(1.05);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
 .navbar-nav {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     flex-grow: 1;
 }
 
-
 .nav-link {
-    margin: 0 50px;
-    font-weight: 800;
+    margin: 0 15px;
+    font-weight: bold;
     text-transform: uppercase;
     color: #CF3737;
     text-decoration: none;
@@ -63,38 +43,91 @@ nav {
 }
 
 .nav-link:hover {
-    color: white;
+    color: green;
 }
-
 
 .color_texto {
     color: #CF3737;
 }
 
+/*-------------------------------------------------------------------------*/
 
-footer {
-    background-color: rgb(39, 37, 37);
-    color: #CF3737;
-}
-
-/* Login Container */
+/* Seção do Main */
 main {
+    background-color: #E1E1E1;
+    padding: 50px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 130vh;
 }
 
+/*-------------------------------------------------------------------------*/
+
+/* classes do carrossel */
+.carousel-caption h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-caption h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/*-------------------------------------------------------------------------*/
+
+/* classes do footer */
+.footer {
+    background-color: #b7b7b7;
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    padding: 10px;
+}
+
+/*-------------------------------------------------------------------------*/
+
+/* login Container */
 .login-container {
     display: flex;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     overflow: hidden;
-    width: 700px;
-    max-width: 100%;
 }
 
+/*-------------------------------------------------------------------------*/
 
+/* main cadastro de usuario */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5F5F5;
+    height: 120vh;
+}
+
+/*-------------------------------------------------------------------------*/
+
+.main-container-agendavisitar {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5F5F5;
+    height: 150vh;
+
+}
+
+/*--------------------------------------------------------------------------*/
+
+/* login Form */
 .login-form {
     background-color: #c00;
     padding: 40px;
@@ -102,12 +135,55 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 350px;
 }
 
 .login-form h2 {
     margin-bottom: 20px;
     font-size: 18px;
 }
+
+/*--------------------------------------------------------------------------*/
+
+/* cadastro form */
+.cadastro-form {
+    background-color: #c00;
+    padding: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 100%;
+    max-width: 120vh;
+    margin: 0 auto;
+}
+
+.cadastro-form h2 {
+    margin-bottom: 20px;
+    font-size: 25px;
+    text-align: center;
+}
+
+
+/* botao cadastrar */
+.botao_cadastro {
+    color: #c00;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    border: none;
+}
+
+/*--------------------------------------------------------------------------*/
+
+/* Estilização do form e input de login/cadastro */
 
 label {
     margin-top: 15px;
@@ -129,6 +205,7 @@ input {
     text-decoration: none;
 }
 
+/* botao entrar */
 .btn-submit {
     background-color: white;
     color: #c00;
@@ -155,16 +232,35 @@ input {
     text-decoration: underline;
 }
 
-/* Logo Container */
+/*--------------------------------------------------------------------------*/
+
+/* Logo Container de cadastro */
+.logo-container_cadastro {
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.logo-container_cadastro img {
+    width: 150px;
+}
+
+/*--------------------------------------------------------------------------*/
+
+/* Logo Container de login */
 .logo-container {
     background-color: #f1f1f1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 10px;
+    width: 150px;
 }
 
 .logo-container img {
-    width: 300px;
-    height: auto;
+    width: 200px;
 }

@@ -19,8 +19,11 @@ from django.urls import path, include
 
 
 urlpatterns = [
+    # Interface administrativa
     path('admin/', admin.site.urls),
-    path('', include('base.urls')), # Rota para a página inicial
+    # Rota para o arquivo urls.py da aplicação base
+    path('', include('base.urls')),
+    # Rota para o arquivo urls.py da aplicação usuario
     path('usuario/', include('usuario.urls')),
 ]
 

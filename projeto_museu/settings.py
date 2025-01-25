@@ -76,26 +76,26 @@ WSGI_APPLICATION = 'projeto_museu.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}'''
+
+
+# banco de dados usando MySQL
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'banco',
+        'USER': 'matheusjesus',
+        'PASSWORD': 'apple.30042005@',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
 }
 
-#Database com mysql
-'''DATABASES = {    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "banco",
-        "USER": "banco",
-        "PASSWORD": "12345",
-        "HOST": "127.0.0.1",
-        "PORT": "3306",
-        'OPTIONS': {
-            'ssl': False,
-        },
-    }
-}'''
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
