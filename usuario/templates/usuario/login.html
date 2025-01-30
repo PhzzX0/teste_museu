@@ -21,62 +21,40 @@
 
 <body>
 
-  <!-- Barra de Navegação com o Bootstrap -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <div class="container-fluid">
-      <!-- Logo do Museu -->
-      <a class="navbar-brand" href="#">
-        <img src="{% static 'base/img/logo_real.png' %}" alt="Logo do Museu" class="logo mb-1">
-      </a>
-
-      <!-- Botão de toggle (aparece em dispositivos menores) -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Links da Navbar -->
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'home_page' %}">Início</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'museu' %}">MUSEU</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'acervo' %}">ACERVO</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'visitar' %}">VISITAR</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'CHCTPLA' %}">CHCTPLA</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'usuario_login' %}" style="text-decoration: underline;">ENTRAR</a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Ícones de redes sociais -->
-      <div class="ms-3 d-flex align-items-center">
-        <a href="https://www.instagram.com/museudoindioluizacantofaofc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-          target="_blank" class="text-dark me-3" style="font-size: 1.5rem;">
-          <i class="bi bi-instagram nav-link"></i></a>
-        <a href="https://www.facebook.com/luizacantofa/?locale=pt_BR" target="_blank" class="text-dark nav-link"
-          style="font-size: 1.5rem;">
-          <i class="bi bi-facebook nav-link"></i>
+  <!-- HEADER -->
+  <header>
+    <!-- Barra de Navegação -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="{% static 'base/img/logo_real.png' %}" alt="Logo do Museu" class="logo mb-1">
         </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="{% url 'home_page' %}">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'museu' %}">Museu</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'acervo' %}">Acervo</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'visitar' %}">Visitar</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'CHCTPLA' %}">CHCTPLA</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'usuario_login' %}">Entrar</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
+
+
 
   <main class="main-login">
     <div class="login-container">
       <div class="login-form">
         <h2>Bem-vindo(a) ao Museu Índio Luiza Cantofa</h2>
-        <form>
+        <form method="post" action="{% url 'usuario_login' %}">
+          {% csrf_token %}
           <label for="usuario">USUÁRIO*</label>
           <input type="text" id="usuario" placeholder="Digite seu usuário" required>
 
@@ -86,6 +64,7 @@
           <a href="#" class="esqueceu-senha">Esqueceu a senha?</a>
           <button type="submit" class="btn-submit">ENTRAR</button>
           <p class="cadastro">Não tem conta? <a href="{% url 'usuario_cadastro' %}">[Cadastre-se]</a></p>
+          
         </form>
       </div>
       <div class="logo-container">
@@ -95,12 +74,12 @@
   </main>
 
   <!-- Footer -->
-  <div style="background-color: #ffffff; color: black; padding: 20px 10px;">
+  <div class="footer-section">
     <div class="container">
       <div class="row">
-        <!-- Informações sobre o Lajedo de Soledade -->
+        <!-- Informações sobre o Museu do Índio -->
         <div class="col-lg-6 col-md-12 mb-4">
-          <h4 style="color: #C6142B; font-weight: bolder;">MUSEU DO ÍNDIO LUIZA CANTOFA</h4>
+          <h4 class="footer-title">MUSEU DO ÍNDIO LUIZA CANTOFA</h4>
           <p>
             O Museu do Índio Luiza Cantofa é um espaço cultural dedicado à preservação e valorização da história e das
             tradições dos povos indígenas, especialmente dos Tabajaras Paiacus. Localizado em Apodi, Rio Grande do
@@ -108,16 +87,15 @@
             respeito pela cultura indígena na região e no Brasil.
           </p>
           <p>
-            <a href="https://wa.me/5584999142282" target="_blank" rel="noopener noreferrer"
-              style="color: black; text-decoration: none;">
+            <a href="https://wa.me/5584999142282" target="_blank" rel="noopener noreferrer" class="footer-link">
               <strong>Telefone:</strong> +55 (84) 999142282<br>
             </a>
             <a href="mailto:contato@museuluizacantofa.org.br" target="_blank" rel="noopener noreferrer"
-              style="color: black; text-decoration: none;">
+              class="footer-link">
               <strong>Email:</strong> contato@museuluizacantofa.org.br<br>
             </a>
             <a href="https://www.instagram.com/museudoindioluizacantofaofc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-              target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none;">
+              target="_blank" rel="noopener noreferrer" class="footer-link">
               <strong>Instagram:</strong> @museudoindioluizacantofaofc
             </a>
           </p>
@@ -125,23 +103,23 @@
 
         <!-- Links úteis -->
         <div class="col-lg-6 col-md-12">
-          <h4 style="color:#C6142B; font-weight: bolder;">LINKS ÚTEIS</h4>
-          <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 10px;">
-              <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
-              <a href="{% url 'museu' %}" style="color: black; text-decoration: none;">INÍCIO</a>
+          <h4 class="footer-title">LINKS ÚTEIS</h4>
+          <ul class="footer-links">
+            <li>
+              <i class="bx bx-chevron-right footer-icon"></i>
+              <a href="{% url 'museu' %}" class="footer-link">INÍCIO</a>
             </li>
-            <li style="margin-bottom: 10px;">
-              <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
-              <a href="{% url 'acervo' %}" style="color: black; text-decoration: none;">ACERVO</a>
+            <li>
+              <i class="bx bx-chevron-right footer-icon"></i>
+              <a href="{% url 'acervo' %}" class="footer-link">ACERVO</a>
             </li>
-            <li style="margin-bottom: 10px;">
-              <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
-              <a href="{% url 'visitar' %}" style="color: black; text-decoration: none;">VISITAR</a>
+            <li>
+              <i class="bx bx-chevron-right footer-icon"></i>
+              <a href="{% url 'visitar' %}" class="footer-link">VISITAR</a>
             </li>
-            <li style="margin-bottom: 10px;">
-              <i class="bx bx-chevron-right" style="color: #C6142B;"></i>
-              <a href="{% url 'CHCTPLA' %}" style="color: black; text-decoration: none;">CHCTPLA</a>
+            <li>
+              <i class="bx bx-chevron-right footer-icon"></i>
+              <a href="{% url 'CHCTPLA' %}" class="footer-link">CHCTPLA</a>
             </li>
           </ul>
         </div>
