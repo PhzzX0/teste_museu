@@ -52,19 +52,21 @@
   <main class="main-login">
     <div class="login-container">
       <div class="login-form">
-        <h2>Bem-vindo(a) ao Museu Índio Luiza Cantofa</h2>
-        <form method="post" action="{% url 'usuario_login' %}">
+        <h2 class="text-center" style="font-size: 30px; margin: 0px 5px;">Login</h2>
+        <h5 class="text-center">Acesse sua conta do Museu do Indío:</h5>
+        <form method="POST" action="{% url 'usuario_login' %}">
           {% csrf_token %}
-          <label for="usuario">USUÁRIO*</label>
-          <input type="text" id="usuario" placeholder="Digite seu usuário" required>
-
-          <label for="senha">SENHA*</label>
-          <input type="password" id="senha" placeholder="Digite sua senha" required>
-
-          <a href="#" class="esqueceu-senha">Esqueceu a senha?</a>
-          <button type="submit" class="btn-submit">ENTRAR</button>
+          <div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+          </div>
+          <button type="submit" class="btn-submit text-center">Acessar</button>
           <p class="cadastro">Não tem conta? <a href="{% url 'usuario_cadastro' %}">[Cadastre-se]</a></p>
-          
+
         </form>
       </div>
       <div class="logo-container">

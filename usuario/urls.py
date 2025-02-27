@@ -11,8 +11,6 @@ from . import views
 # ● name: nome da rota. O Django utiliza o app_name mais o nome da rota para nomear a URL
 
 urlpatterns = [
-   
-
     path('login/', views.usuario_login, name='usuario_login'),
     path('cadastro/', views.usuario_cadastro, name='usuario_cadastro'),
     path('agendar_visita/', views.agendar_visita, name='agendar_visita'),

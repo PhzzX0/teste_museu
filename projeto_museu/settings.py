@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'projeto_museu.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'banco',
+        'NAME': 'Banco_museu',
         'USER': 'matheusjesus',
         'PASSWORD': 'apple.30042005@',
         'HOST': 'localhost',

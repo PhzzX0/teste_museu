@@ -11,6 +11,7 @@
 body {
     background-color: #f8f9fa;
 }
+
 /*-------------------------------------------------------------------------*/
 
 /*classes do navbar */
@@ -139,7 +140,7 @@ main {
 /*-------------------------------------------------------------------------*/
 
 /* main cadastro de usuario */
-.main-container {
+.main-login {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -147,6 +148,7 @@ main {
     background-color: #F5F5F5;
     height: 180vh;
 }
+
 
 /*-------------------------------------------------------------------------*/
 
@@ -171,13 +173,9 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 350px;
+    width: 500px;
 }
 
-.login-form h2 {
-    margin-bottom: 20px;
-    font-size: 18px;
-}
 
 /*--------------------------------------------------------------------------*/
 
@@ -249,7 +247,6 @@ input {
     padding: 10px;
     margin-top: 20px;
     border-radius: 5px;
-    font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
 }

@@ -105,6 +105,14 @@ img.shadow-lg {
 
 /*cards*/
 
+
+/*lembra depois de verificar esse erro no card de visita*/
+.info-card {
+    padding: 20px;
+    width: 300px;
+    height: 500px;
+}
+
 .card {
     margin: 10px auto;
     border: none;
@@ -137,6 +145,7 @@ img.shadow-lg {
 }
 
 /*estilização navbar*/
+
 /* Cabeçalho */
 header {
     position: sticky;
@@ -261,70 +270,70 @@ main {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  /* Seção de Testemunhos */
-  .cards_visitar {
+}
+
+/* Seção de Testemunhos */
+.cards_visitar {
     margin-top: 40px;
-  }
-  
-  /* Card Layout */
-  .testimonial-item {
+}
+
+/* Card Layout */
+.testimonial-item {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
     transition: transform 0.3s ease;
-  }
-  
-  .testimonial-item:hover {
+}
+
+.testimonial-item:hover {
     transform: translateY(-10px);
-  }
-  
-  .info-card {
+}
+
+.info-card {
     padding: 20px;
-  }
-  
-  .icon {
+}
+
+.icon {
     font-size: 40px;
-    color: #4CAF50; /* Cor verde para os ícones */
+    color: #4CAF50;
+    /* Cor verde para os ícones */
     margin-bottom: 15px;
-  }
-  
-  h3 {
+}
+
+h3 {
     font-size: 1.6rem;
     color: #333;
     margin-bottom: 20px;
-  }
-  
-  /* Listagem de itens */
-  ul {
+}
+
+/* Listagem de itens */
+ul {
     padding-left: 20px;
     text-align: left;
-  }
-  
-  ul li {
+}
+
+ul li {
     margin-bottom: 10px;
-  }
-  
-  ul li a.link-green {
+}
+
+ul li a.link-green {
     color: #4CAF50;
     text-decoration: none;
-  }
-  
-  ul li a.link-green:hover {
+}
+
+ul li a.link-green:hover {
     text-decoration: underline;
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
     .row {
-      display: block;
+        display: block;
     }
-  
+
     .col-lg-4 {
-      margin-bottom: 20px;
+        margin-bottom: 20px;
     }
-  }
-  
+}
