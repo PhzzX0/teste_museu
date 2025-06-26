@@ -12,6 +12,7 @@ from . import views
 
 urlpatterns = [
     path('login/', views.usuario_login, name='usuario_login'),
+#    path('accounts/', include('django.contrib.auth.urls')),  # Adicione esta linha
     path('cadastro/', views.usuario_cadastro, name='usuario_cadastro'),
     path('agendar_visita/', views.agendar_visita, name='agendar_visita'),
 ]

@@ -8,21 +8,21 @@ class Usuario(models.Model):
     def __str__(self):
         return self.nome_completo  # Exibe o nome completo
 
+
 class Agendamento(models.Model):
-    nome_completo = models.CharField(max_length=150)  # Nome do visitante
-    email = models.EmailField(default='')  # E-mail do visitante
-    telefone = models.CharField(max_length=15, default='')  # Telefone de contato
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True, blank=True)  # Relacionamento com Usuario
+    nome_completo = models.CharField(max_length=150)  
+    email = models.EmailField(default='')  
+    telefone = models.CharField(max_length=15, default='')  
     tipo_visitante = models.CharField(
         max_length=20,
         choices=[('individual', 'Individual'), ('grupo', 'Grupo de Amigos'), ('instituicao', 'Instituição')],
-        default='individual',  # Define um valor padrão
+        default='individual',  
     )
-    instituicao = models.CharField(max_length=255, blank=True, null=True)  # Nome da instituição (opcional)
-    quantidade_visitantes = models.PositiveIntegerField(default=1)  # Quantidade de visitantes
-    data = models.DateField()  # Data da visita
-    horario = models.TimeField()  # Horário da visita
+    instituicao = models.CharField(max_length=255, blank=True, null=True)  
+    quantidade_visitantes = models.PositiveIntegerField(default=1)  
+    data = models.DateField()  
+    horario = models.TimeField()  
 
     def __str__(self):
         return f"{self.nome_completo} - {self.data} {self.horario}"
-
-
