@@ -2,8 +2,6 @@
 
 Este projeto tem como objetivo desenvolver um site institucional para o Museu do Índio de Apodi/RN. A iniciativa busca valorizar a cultura indígena local e facilitar o acesso da comunidade às informações do museu, como seu acervo, eventos e história.
 
-Além disso, serve como uma experiência prática de aprendizado para alunos do curso técnico em Informática, unindo tecnologia, cultura e cidadania.
-
 ## 🚀 Tecnologias Utilizadas
 
 - HTML5, CSS3, JavaScript
