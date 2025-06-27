@@ -56,6 +56,16 @@
       <div class="cadastro-form">
         <h2>Crie sua conta no Museu Luiza Cantofa</h2>
 
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+
         <form method="post" action="{% url 'usuario_cadastro' %}">
           {% csrf_token %}
 
@@ -83,7 +93,10 @@
         <div class="col-lg-4 col-md-12 mb-4">
           <h4 style="color: #C6142B; font-weight: bolder;">MUSEU DO ÍNDIO LUIZA CANTOFA</h4>
           <p>
-            O Museu Indígena Luiza Cantofa é um espaço cultural dedicado à preservação e valorização da história e das tradições do povo Tapuia Paiacu. Localizado em Apodi, no Rio Grande do Norte, é o primeiro museu indígena do estado. O espaço abriga uma rica coleção de artefatos e relatos que promovem o reconhecimento e a valorização da cultura Tapuia Paiacu, contribuindo para a preservação de sua identidade e memória ancestral.
+            O Museu Indígena Luiza Cantofa é um espaço cultural dedicado à preservação e valorização da história e das
+            tradições do povo Tapuia Paiacu. Localizado em Apodi, no Rio Grande do Norte, é o primeiro museu indígena do
+            estado. O espaço abriga uma rica coleção de artefatos e relatos que promovem o reconhecimento e a
+            valorização da cultura Tapuia Paiacu, contribuindo para a preservação de sua identidade e memória ancestral.
           </p>
           <p>
             <a href="https://wa.me/5584999142282" target="_blank" rel="noopener noreferrer"
@@ -93,7 +106,8 @@
               style="color: black; font-weight: 300; text-decoration: none;">Email:contato@museuluizacantofa.org.br<br>
             </a>
             <a href="https://www.instagram.com/museudoindioluizacantofaofc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-              target="_blank" rel="noopener noreferrer" style="color: black; font-weight: 300; text-decoration: none;">Instagram:@museudoindioluizacantofaofc</a>
+              target="_blank" rel="noopener noreferrer"
+              style="color: black; font-weight: 300; text-decoration: none;">Instagram:@museudoindioluizacantofaofc</a>
           </p>
         </div>
 

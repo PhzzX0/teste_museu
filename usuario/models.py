@@ -10,19 +10,22 @@ class Usuario(models.Model):
 
 
 class Agendamento(models.Model):
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True, blank=True)  # Relacionamento com Usuario
-    nome_completo = models.CharField(max_length=150)  
-    email = models.EmailField(default='')  
-    telefone = models.CharField(max_length=15, default='')  
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)  # referencia ao usuário logado
+    telefone = models.CharField(max_length=15, default='')
     tipo_visitante = models.CharField(
         max_length=20,
-        choices=[('individual', 'Individual'), ('grupo', 'Grupo de Amigos'), ('instituicao', 'Instituição')],
-        default='individual',  
+        choices=[
+            ('individual', 'Individual'),
+            ('grupo', 'Grupo de Amigos'),
+            ('instituicao', 'Instituição')
+        ],
+        default='individual'
     )
-    instituicao = models.CharField(max_length=255, blank=True, null=True)  
-    quantidade_visitantes = models.PositiveIntegerField(default=1)  
-    data = models.DateField()  
-    horario = models.TimeField()  
+    instituicao = models.CharField(max_length=255, blank=True, null=True)
+    quantidade_visitantes = models.PositiveIntegerField(default=1)
+    data = models.DateField()
+    horario = models.TimeField()
 
     def __str__(self):
-        return f"{self.nome_completo} - {self.data} {self.horario}"
+        return f"{self.usuario.nome_completo} - {self.data} {self.horario}"
+
