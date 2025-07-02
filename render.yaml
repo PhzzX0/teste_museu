@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: django-app
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn meu_projeto.wsgi
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: meu_projeto.settings
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: False
+    staticPublishPath: staticfiles
