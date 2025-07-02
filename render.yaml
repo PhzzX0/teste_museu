@@ -1,14 +1,14 @@
 services:
   - type: web
-    name: django-app
+    name: projeto-museu
     env: python
-    buildCommand: ""
-    startCommand: gunicorn meu_projeto.wsgi
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn projeto_museu.wsgi
+    staticPublishPath: staticfiles
     envVars:
       - key: DJANGO_SETTINGS_MODULE
-        value: meu_projeto.settings
+        value: projeto_museu.settings
       - key: SECRET_KEY
         generateValue: true
       - key: DEBUG
         value: False
-    staticPublishPath: staticfiles
